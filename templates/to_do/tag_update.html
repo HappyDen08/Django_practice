@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Update Tag</h2>
+
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.name }}
+        <div class="d-flex gap-2 mt-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{% url 'to_do:tags_list' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+{% endblock %}
